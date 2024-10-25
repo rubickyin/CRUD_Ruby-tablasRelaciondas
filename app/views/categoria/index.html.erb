@@ -1,16 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Categoria" %>
+<% content_for :title, "Categoría" %>
 
-<h1>Categoria</h1>
+<h1 style="text-align: center;">Categoría</h1>
 
-<div id="categoria">
-  <% @categoria.each do |categorium| %>
-    <%= render categorium %>
-    <p>
-      <%= link_to "Show this categorium", categorium %>
-    </p>
-  <% end %>
+<!-- Botón para volver a la página principal -->
+<div class="back-button-container">
+  <%= link_to "Volver a Inicio", root_path, class: "btn btn-back" %>
 </div>
 
-<%= link_to "New categorium", new_categorium_path %>
+
+<div class="categorias-container">
+  <div id="categoria">
+    <% @categoria.each do |categorium| %>
+      <div class="categorium-item">
+        <%= render categorium %>
+        <p>
+          <%= link_to "Mostrar esta categoría", categorium, class: "btn btn-link" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Nueva categoría", new_categorium_path, class: "btn-new btn-primary" %>
+</div>
+

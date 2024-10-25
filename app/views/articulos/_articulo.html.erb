@@ -1,21 +1,20 @@
-<div id="<%= dom_id articulo %>">
-  <p>
-    <strong>ID:</strong>
-    <%= articulo.id %>
-  </p>
-  <p>
-    <strong>Titulo:</strong>
-    <%= articulo.titulo %>
-  </p>
-
-  <p>
-    <strong>Contenido:</strong>
-    <%= articulo.contenido %>
-  </p>
-
-  <p>
-    <strong>Usuario:</strong>
-    <%= articulo.usuario_id %>
-  </p>
-
+<div id="<%= dom_id articulo %>" class="usuario-info-container">
+  <table class="usuario-info-table">
+    <tr>
+      <th>ID</th>
+      <td><%= articulo.id %></td>
+    </tr>
+    <tr>
+      <th>Título</th>
+      <td><%= articulo.titulo %></td>
+    </tr>
+    <tr>
+      <th>Contenido</th>
+      <td><%= articulo.contenido %></td>
+    </tr>
+    <tr>
+      <th>Usuario</th>
+      <td><%= articulo.usuario.nombre %></td>
+    </tr>
+  </table>
 </div>

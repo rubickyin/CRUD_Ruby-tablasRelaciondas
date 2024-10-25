@@ -1,32 +1,34 @@
-<%= form_with(model: comentario) do |form| %>
-  <% if comentario.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(comentario.errors.count, "error") %> prohibited this comentario from being saved:</h2>
+<div class="form-container">
+  <%= form_with(model: comentario, local: true) do |form| %>
+    <% if comentario.errors.any? %>
+      <div class="error-messages">
+        <h2><%= pluralize(comentario.errors.count, "error") %> prohibited this comentario from being saved:</h2>
+        <ul>
+          <% comentario.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% comentario.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="form-group">
+      <%= form.label :contenido, style: "display: block" %>
+      <%= form.text_area :contenido, class: "form-control", rows: 4 %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :usuario_id, style: "display: block" %>
+      <%= form.text_field :usuario_id, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :articulo_id, style: "display: block" %>
+      <%= form.text_field :articulo_id, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit "Crear Comentario", class: "btn btn-primary" %>
     </div>
   <% end %>
+</div>
 
-  <div>
-    <%= form.label :contenido, style: "display: block" %>
-    <%= form.text_area :contenido %>
-  </div>
-
-  <div>
-    <%= form.label :usuario_id, style: "display: block" %>
-    <%= form.text_field :usuario_id %>
-  </div>
-
-  <div>
-    <%= form.label :articulo_id, style: "display: block" %>
-    <%= form.text_field :articulo_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>

@@ -1,16 +1,19 @@
-<div id="<%= dom_id usuario %>">
-  <p>
-    <strong>ID:</strong>
-    <%= usuario.id %>
-  </p>
-  <p>
-    <strong>Nombre:</strong>
-    <%= usuario.nombre %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= usuario.email %>
-  </p>
-
+<div id="<%= dom_id usuario %>" class="usuario-info-container">
+  <table class="usuario-info-table">
+    <tr>
+      <th>ID</th>
+      <td><%= usuario.id %></td>
+    </tr>
+    <tr>
+      <th>Nombre</th>
+      <td><%= usuario.nombre %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= usuario.email %></td>
+    </tr>
+  </table>
 </div>
+
+
+

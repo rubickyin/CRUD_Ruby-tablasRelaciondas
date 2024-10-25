@@ -3,8 +3,9 @@
 <%= render @categorium %>
 
 <div>
-  <%= link_to "Edit this categorium", edit_categorium_path(@categorium) %> |
-  <%= link_to "Back to categoria", categoria_path %>
+  <%= link_to "Editar esta categoría", edit_categorium_path(@categorium), class: "btn-new btn-primary" %> |
+  <%= link_to "Volver a la categoría", categoria_path, class: "btn-new btn-primary" %>
+  </br></br>
 
-  <%= button_to "Destroy this categorium", @categorium, method: :delete %>
+  <%= button_to "Destruir esta categoria", @categorium, method: :delete, class: "btn btn-primary" %>
 </div>

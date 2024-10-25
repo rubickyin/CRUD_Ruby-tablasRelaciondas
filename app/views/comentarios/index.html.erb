@@ -2,15 +2,24 @@
 
 <% content_for :title, "Comentarios" %>
 
-<h1>Comentarios</h1>
+<h1 style="text-align: center;">Comentarios</h1>
 
-<div id="comentarios">
-  <% @comentarios.each do |comentario| %>
-    <%= render comentario %>
-    <p>
-      <%= link_to "Show this comentario", comentario %>
-    </p>
-  <% end %>
+<!-- Botón para volver a la página principal -->
+<div class="back-button-container">
+  <%= link_to "Volver a Inicio", root_path, class: "btn btn-back" %>
 </div>
 
-<%= link_to "New comentario", new_comentario_path %>
+<div class="comentarios-container">
+  <div id="comentarios">
+    <% @comentarios.each do |comentario| %>
+      <div class="comentario-item">
+        <%= render comentario %>
+        <p>
+          <%= link_to "Mostrar este comentario", comentario, class: "btn btn-link" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Nuevo comentario", new_comentario_path, class: "btn-new btn-primary" %>
+</div>
+

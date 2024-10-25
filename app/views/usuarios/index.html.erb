@@ -2,15 +2,24 @@
 
 <% content_for :title, "Usuarios" %>
 
-<h1>Usuarios</h1>
+<h1 style="text-align: center;">Usuarios</h1>
 
-<div id="usuarios">
-  <% @usuarios.each do |usuario| %>
-    <%= render usuario %>
-    <p>
-      <%= link_to "Show this usuario", usuario %>
-    </p>
-  <% end %>
+<!-- Botón para volver a la página principal -->
+<div class="back-button-container">
+  <%= link_to "Volver a Inicio", root_path, class: "btn btn-back" %>
 </div>
 
-<%= link_to "New usuario", new_usuario_path %>
+<div class="usuarios-container">
+  <div id="usuarios">
+    <% @usuarios.each do |usuario| %>
+      <div class="usuario-item">
+        <%= render usuario %>
+        <p>
+          <%= link_to "Mostrar este usuario", usuario, class: "btn btn-link" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Nuevo Usuario", new_usuario_path, class: "btn-new btn-primary" %>
+</div>
+

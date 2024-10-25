@@ -1,21 +1,21 @@
-<div id="<%= dom_id comentario %>">
-  <p>
-    <strong>ID:</strong>
-    <%= comentario.id %>
-  </p>
-  <p>
-    <strong>Contenido:</strong>
-    <%= comentario.contenido %>
-  </p>
-
-  <p>
-    <strong>Usuario:</strong>
-    <%= comentario.usuario_id %>
-  </p>
-
-  <p>
-    <strong>Articulo:</strong>
-    <%= comentario.articulo_id %>
-  </p>
-
+<div id="<%= dom_id comentario %>" class="usuario-info-container">
+  <table class="usuario-info-table">
+    <tr>
+      <th>ID</th>
+      <td><%= comentario.id %></td>
+    </tr>
+    <tr>
+      <th>Contenido</th>
+      <td><%= comentario.contenido %></td>
+    </tr>
+    <tr>
+      <th>Usuario</th>
+      <td><%= comentario.usuario.nombre %></td>
+    </tr>
+    <tr>
+      <th>Articulo</th>
+      <td><%= comentario.articulo.titulo %></td>
+    </tr>
+  </table>
 </div>
+

@@ -1,16 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Articulos" %>
+<% content_for :title, "Artículos" %>
 
-<h1>Articulos</h1>
+<h1 style="text-align: center;">Artículos</h1>
 
-<div id="articulos">
-  <% @articulos.each do |articulo| %>
-    <%= render articulo %>
-    <p>
-      <%= link_to "Show this articulo", articulo %>
-    </p>
-  <% end %>
+<!-- Botón para volver a la página principal -->
+<div class="back-button-container">
+  <%= link_to "Volver a Inicio", root_path, class: "btn btn-back" %>
 </div>
 
-<%= link_to "New articulo", new_articulo_path %>
+<div class="articulos-container">
+  <div id="articulos">
+    <% @articulos.each do |articulo| %>
+      <div class="articulo-item">
+        <%= render articulo %>
+        <p>
+          <%= link_to "Mostrar este artículo", articulo, class: "btn btn-link" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Nuevo artículo", new_articulo_path, class: "btn-new btn-primary" %>
+</div>
+

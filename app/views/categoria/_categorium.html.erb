@@ -1,16 +1,16 @@
-<div id="<%= dom_id categorium %>">
-  <p>
-    <strong>ID:</strong>
-    <%= categorium.id %>
-  </p>
-  <p>
-    <strong>Nombre:</strong>
-    <%= categorium.nombre %>
-  </p>
-
-  <p>
-    <strong>Descripcion:</strong>
-    <%= categorium.descripcion %>
-  </p>
-
+<div id="<%= dom_id categorium %>" class="usuario-info-container">
+  <table class="usuario-info-table">
+    <tr>
+      <th>ID</th>
+      <td><%= categorium.id %></td>
+    </tr>
+    <tr>
+      <th>Nombre:</th>
+      <td><%= categorium.nombre %></td>
+    </tr>
+    <tr>
+      <th>Descripcion:</th>
+      <td><%= categorium.descripcion %></td>
+    </tr>
+  </table>
 </div>

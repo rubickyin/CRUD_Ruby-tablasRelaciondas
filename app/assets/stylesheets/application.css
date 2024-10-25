@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+ body{
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+
+.boton-inicio {
+    padding: 15px 30px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    margin: 50px;
+}
+
+.boton-inicio:hover {
+    background-color: #0056b3;
+}
